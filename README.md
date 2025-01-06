@@ -98,11 +98,20 @@ The application is built with responsive web design principles, meaning it adapt
 ### Books Management Page  
 <img width="1438" alt="image" src="https://github.com/user-attachments/assets/e1e5c39b-f104-4f6f-97fc-31637b222d2a" />
 
+### Books Details Page  
+<img width="1357" alt="image" src="https://github.com/user-attachments/assets/5398bc02-f6ba-4d81-b028-960401595f21" />
+
 ### Authors Management Page  
 <img width="1439" alt="image" src="https://github.com/user-attachments/assets/50f6860d-4b84-491c-ad51-d870d448363c" />
 
+### Authors Details Page  
+<img width="1359" alt="image" src="https://github.com/user-attachments/assets/57fa5218-030a-46fb-819d-26dc1d7bf473" />
+
 ### Clients Management Page  
 <img width="1439" alt="image" src="https://github.com/user-attachments/assets/aaeae6b0-5469-4202-bcf2-26a5a846df30" />
+
+### Clients Details Page  
+<img width="1355" alt="image" src="https://github.com/user-attachments/assets/239010be-1a81-4f1d-b77d-d8434ebc844b" />
 
 ### Loan and Return Pages  
 <img width="1437" alt="image" src="https://github.com/user-attachments/assets/d43325a6-603a-4f0a-ad81-308653897730" />
