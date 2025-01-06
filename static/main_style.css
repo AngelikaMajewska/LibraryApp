@@ -4,42 +4,42 @@
 .navbar {
     background-color: rgba(211, 211, 211, 0.85);
     padding: 10px 0;
-    text-align: center;      /* Wyrównanie tekstu do środka */
-    position: fixed; /* Przypina navbar do widocznego obszaru */
+    text-align: center;
+    position: fixed;
     top: 0;
-    width: 100%; /* Opcjonalne: aby navbar rozciągał się na całą szerokość */
-    z-index: 1000; /* Zapewnia, że navbar będzie nad innymi elementami */
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar ul {
-    list-style-type: none;   /* Usunięcie domyślnych punktów listy */
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;           /* Flexbox - elementy obok siebie */
-    justify-content: center; /* Wyrównanie elementów do środka */
+    display: flex;
+    justify-content: center;
 }
 
 .navbar ul li {
-    margin: 0 10px;  /* Odstęp między przyciskami */
+    margin: 0 10px;
 }
 
 .navbar ul li a {
     display: inline-block;
     padding: 12px 20px;
-    background-color: #ffa552;  /* Tło przycisku */
-    color: #954300;                /* Kolor tekstu */
-    font-size: 18px;             /* Rozmiar czcionki */
-    text-decoration: none;       /* Usunięcie podkreślenia */
-    border-radius: 5px;          /* Zaokrąglenie rogów */
-    transition: background-color 0.3s ease; /* Animacja zmiany koloru */
+    background-color: #ffa552;
+    color: #954300;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    background-color: #fd8f23;  /* Zmiana koloru tła po najechaniu */
+    background-color: #fd8f23;
 }
 
 .navbar ul li a:active {
-    background-color: #cd7e3b;  /* Zmiana koloru po kliknięciu */
+    background-color: #cd7e3b;
 }
 
 @media (max-width: 1000px) {
@@ -115,7 +115,7 @@ body{
     margin-bottom:0;
 }
 
-.all_items_container{             /* lists container */
+.all_items_container{
     width: 80%;
     align-self: center;
     align-content: center;
