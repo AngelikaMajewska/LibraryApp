@@ -1,0 +1,201 @@
+{% macro authors_list(authors) %}
+    <table class="data_table all_author_list">
+        <thead>
+            <tr>
+                <th style="width: 20%">Author ID</th>
+                <th colspan="2">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+                <tr>
+                    <td style="text-align: center;">{{author[0]}}</td>
+                    <td style="border-right: none"><a href="{{ url_for('author_details') }}?id={{ author[0] }}">{{ author[1] }}</a></td>
+                    <td style="width: 20px;  border-left: none"><a class="icon-button add_button" href="{{ url_for('remove_author') }}?id={{ author[0] }}" style="text-align: center; font-size: 25px; font-weight: bolder"> - </a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
+
+{% macro book_details_list(book) %}
+    <table class="data_table book_details" >
+        <tbody>
+            <tr>
+                <th>Book ID</th>
+                <td>{{ book[0] }}</td>
+            </tr>
+            <tr>
+                <th>ISBN</th>
+                <td>{{ book[1] }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ book[2] }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ book[3] }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td><a href="{{ url_for('author_details') }}?id={{ book[5]}}">{{ book[4] }}</a></td>
+            </tr>
+        </tbody>
+    </table>
+{% endmacro %}
+
+{% macro available_books_list(books) %}
+    <table class="data_table available_books_table">
+          <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+          </thead>
+          <tbody>
+                {%for book in books %}
+                     <tr>
+                         <td style="text-align: center;">{{book[0]}}</td>
+                         <td style="text-align: center;">{{book[1]}}</td>
+                         <td>{{book[2]}}</td>
+                         <td>{{book[4]}}</td>
+                     </tr>
+                {% endfor %}
+          </tbody>
+    </table>
+{% endmacro %}
+
+{% macro loaned_books_list(books) %}
+    <table class="data_table loaned_books_table">
+          <thead>
+                <tr>
+                    <th style="text-align: center;">Book ID</th>
+                    <th>Title</th>
+                    <th>Loan date</th>
+                    <th>Loaned by</th>
+                </tr>
+          </thead>
+          <tbody>
+                {%for book in books %}
+                <tr>
+                    <td style="text-align: center;">{{book[0]}}</td>
+                    <td>{{book[1]}}</td>
+                    <td style="text-align: center; ">{{book[2]}}</td>
+                    <td>{{book[3]}} {{book[4]}}</td>
+                </tr>
+                {% endfor %}
+          </tbody>
+    </table>
+{% endmacro %}
+
+{% macro all_books_list(books) %}
+    <table class="data_table all_books_list">
+        <thead>
+            <tr>
+                <th style="text-align: center;">ID</th>
+                <th style="text-align: center; ">ISBN</th>
+                <th style="text-align: center;">Author</th>
+                <th style="text-align: center;" colspan="2">Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td style="text-align: center;"> {{book[0]}}</td>
+                <td style="text-align: center;"> {{book[1]}}</td>
+                <td style=" border-right: none"><a href="{{ url_for('author_details') }}?id={{ book[6] }}">{{ book[5] }}</a></td>
+                <td style=" border-right: none"><a href="{{ url_for('book_details') }}?id={{ book[0] }}">{{ book[2] }}</a></td>
+                <td style="width: 20px;  border-left: none"><a class="icon-button add_button" href="{{ url_for('remove_book') }}?id={{ book[0] }}" style="text-align: center; font-size: 25px"> - </a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
+
+{% macro client_details_list(client) %}
+    <table class="data_table client_details">
+    <tbody>
+            <tr>
+                <th>Client ID</th>
+                <td>{{ client[0] }}</td>
+            </tr>
+            <tr>
+                <th>First name</th>
+                <td>{{ client[1] }}</td>
+            </tr>
+            <tr>
+                <th>Last name</th>
+                <td>{{ client[2] }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endmacro %}
+
+{% macro client_read_books_list(books) %}
+    <table class="data_table read_list">
+        <thead>
+            <tr>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th style="text-align: right;">Loan date</th>
+                <th style="text-align: right;">Return date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td style="text-align: center;">{{ book[0] }}</td>
+                    <td style=" border-right: none"><a href="{{ url_for('book_details') }}?id={{ book[0] }}">{{ book[1] }}</a></td>
+                    <td style="text-align: right;">{{ book[2] }}</td>
+                    <td style="text-align: right;">{{ book[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
+
+{% macro all_clients_list(clients) %}
+    <table class="data_table all_clients_list" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th colspan="2">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in clients |sort(attribute='first_name') %}
+            <tr>
+                <td style="text-align: center;">{{client[0]}}</td>
+                <td style="border-right: none"><a href="{{ url_for('client_details') }}?id={{ client[0] }}">{{ client[1] }} {{ client[2] }}</a></td>
+                <td style="width: 20px;  border-left: none"><a class="icon-button add_button" href="{{ url_for('remove_client') }}?id={{ client[0] }}" style="text-align: center; font-size: 25px; font-weight: bolder"> - </a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
+
+{%  macro books_by_author_list(books) %}
+    <table class="data_table read_list">
+        <thead>
+            <tr>
+                <th style="width: auto;">Book ID</th>
+                <th style="width: auto; text-align: center">ISBN</th>
+                <th>Name</th>
+                <th style="width: auto;text-align: left;">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td style="text-align: center;">{{ book[0] }}</td>
+                    <td style="text-align: center;">{{ book[2] }}</td>
+                    <td style="text-align: left;">{{ book[3] }}</td>
+                    <td>{{ book[1] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}

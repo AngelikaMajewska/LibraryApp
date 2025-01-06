@@ -1,0 +1,14 @@
+{% extends "elements/base.html" %}
+{% import 'elements/tables.html' as tables %}
+{% block title %} Book details {% endblock %}
+
+{% block content %}
+{#        <p class="return_button" ><a href="{{ url_for('books') }}">&#x300A;</a></p>#}
+        <h1 class="h1_header">Book details</h1>
+        <div class="main_content">
+            <div class="book_details_container">
+                {{ tables.book_details_list(book) }}
+            </div>
+        </div>
+
+{% endblock %}

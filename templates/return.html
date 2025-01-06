@@ -1,0 +1,26 @@
+{% extends "elements/base.html" %}
+{% import 'elements/tables.html' as tables %}
+{% import 'elements/forms.html' as forms %}
+{% block title %}Return the book{% endblock %}
+
+{% block content %}
+    {% if books is not none %}
+        <h1 class="h1_header">Book returning system</h1>
+        <div class="rental_form">
+            <h2 class="h2_header"> Return a book</h2>
+            <div>
+                {{ forms.loan_return_book_form(books, clients,1,"Return") }}
+            </div>
+        </div>
+        <div class ="loaned_books_list_container">
+            <h2 class="h2_header">Loaned books</h2>
+            <div class="loaned_books_list_div">
+                {{ tables.loaned_books_list(books)}}
+            </div>
+        </div>
+    {% else %}
+        <div class="main_content">
+            <p class="return_answer">{{answer}}</p>
+        </div>
+    {% endif %}
+{% endblock %}

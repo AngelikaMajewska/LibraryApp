@@ -1,0 +1,17 @@
+{% extends "elements/base.html" %}
+{% import 'elements/tables.html' as tables %}
+{% import 'elements/forms.html' as forms %}
+{% block title %}Add client{% endblock %}
+
+{% block content %}
+    <div class="add_form_div_container">
+        <h2 class="h2_header"> Add an author</h2>
+        <div>
+            {{ forms.add_author_form() }}
+        </div>
+    </div>
+    <h1 class="h1_header">List of authors</h1>
+    <div class="all_author_list_container">
+        {{ tables.authors_list(authors) }}
+    </div>
+{% endblock %}

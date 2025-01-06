@@ -1,0 +1,17 @@
+{% extends "elements/base.html" %}
+{% import 'elements/tables.html' as tables %}
+{% import 'elements/forms.html' as forms %}
+{% block title %}Client list{% endblock %}
+
+{% block content %}
+    <div class="add_form_div_container">
+        <h2 class="h2_header"> Add a client</h2>
+        <div>
+            {{ forms.add_client_form() }}
+        </div>
+    </div>
+    <h1 class="h1_header">List of clients</h1>
+    <div class="all_clients_list_container">
+        {{ tables.all_clients_list(clients) }}
+    </div>
+{% endblock %}

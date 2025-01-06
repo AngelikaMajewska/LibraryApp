@@ -1,0 +1,862 @@
+/* ========================================================================================================================
+                                                        Navbar
+   ======================================================================================================================== */
+.navbar {
+    background-color: rgba(211, 211, 211, 0.85);
+    padding: 10px 0;
+    text-align: center;      /* Wyrównanie tekstu do środka */
+    position: fixed; /* Przypina navbar do widocznego obszaru */
+    top: 0;
+    width: 100%; /* Opcjonalne: aby navbar rozciągał się na całą szerokość */
+    z-index: 1000; /* Zapewnia, że navbar będzie nad innymi elementami */
+}
+
+.navbar ul {
+    list-style-type: none;   /* Usunięcie domyślnych punktów listy */
+    margin: 0;
+    padding: 0;
+    display: flex;           /* Flexbox - elementy obok siebie */
+    justify-content: center; /* Wyrównanie elementów do środka */
+}
+
+.navbar ul li {
+    margin: 0 10px;  /* Odstęp między przyciskami */
+}
+
+.navbar ul li a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ffa552;  /* Tło przycisku */
+    color: #954300;                /* Kolor tekstu */
+    font-size: 18px;             /* Rozmiar czcionki */
+    text-decoration: none;       /* Usunięcie podkreślenia */
+    border-radius: 5px;          /* Zaokrąglenie rogów */
+    transition: background-color 0.3s ease; /* Animacja zmiany koloru */
+}
+
+.navbar ul li a:hover {
+    background-color: #fd8f23;  /* Zmiana koloru tła po najechaniu */
+}
+
+.navbar ul li a:active {
+    background-color: #cd7e3b;  /* Zmiana koloru po kliknięciu */
+}
+
+@media (max-width: 1000px) {
+    .navbar ul li a {
+        font-size: 16px;
+        margin: 0;
+        padding:8px;
+    }
+    .navbar ul li{
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar ul li a{
+        font-size: 14px;
+        margin:0;
+        padding: 5px;
+    }
+    .navbar ul li{
+        margin: 0 5px;
+    }
+
+}
+/* ========================================================================================================================
+                                                        body
+   ======================================================================================================================== */
+
+body{
+    background-color: #ffffff;
+    margin: auto;
+}
+
+.subpage_details{
+    padding: 0;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0px 0px 12px 1px rgba(142, 142, 142, 0.4);
+    margin-top: 35px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background-color: #f8f8f8;
+    font-family: "Times New Roman";
+}
+
+@media (max-width: 1000px) {
+    .subpage_details {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .subpage_details{
+        margin-top: 17px;
+    }
+
+}
+
+/* ==================================================================================================
+                                          Main content
+   ================================================================================================== */
+
+.h1_header{
+    width:100%;
+    color: #474747;
+    text-align: center;
+    display: flex;
+    flex:1;
+    font-size: 30px;
+    justify-content: center;
+    /*padding-top: 20px;*/
+    margin-bottom:0;
+}
+
+.all_items_container{             /* lists container */
+    width: 80%;
+    align-self: center;
+    align-content: center;
+}
+
+.h2_header{
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+    .h1_header {
+        font-size: 25px;
+    }
+    .h2_header {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .h1_header{
+        font-size: 20px;
+    }
+    .h2_header{
+        font-size: 15px;
+    }
+}
+/* ===============================================================================
+                               General table settings
+   =============================================================================== */
+
+.data_table {
+    border-collapse: collapse;
+    font-size: 17px;
+    width: auto;
+}
+
+.data_table td {
+    border: 1px solid #f1e7de;
+    background-color: #fdf6f0;
+    padding: 5px 10px;
+}
+
+.data_table th {
+    padding: 5px 10px;
+    background-color: #c5bdb7;
+    border: 1px solid #cfc7bf;
+}
+
+@media (max-width: 1000px) {
+    .data_table {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .data_table {
+        font-size: 14px;
+    }
+}
+
+/* ===============================================================================
+                                  Table of all books
+   =============================================================================== */
+
+.all_books_list_container {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin: auto;
+}
+
+.all_books_list{
+    text-wrap: wrap;
+}
+
+.all_books_list th{
+    text-align: right;
+    padding: 10px;
+}
+
+.all_books_list td{
+    padding: 10px;
+    width: auto;
+}
+
+@media (max-width: 1000px) {
+    .all_books_list{
+        margin: 0 5px;
+    }
+    .all_books_list th, .all_books_list td{
+        padding:2px 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .all_books_list{
+        margin: 0 5px;
+    }
+    .all_books_list th, .all_books_list td{
+        padding:2px 5px;
+    }
+}
+
+/* ===============================================================================
+                                 Book details table
+   =============================================================================== */
+
+.book_details_container {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin: auto;
+}
+
+.book_details{
+    text-wrap: wrap;
+}
+
+.book_details th{
+    text-align: right;
+    padding: 10px;
+}
+
+.book_details td{
+    padding: 10px;
+    width: auto;
+}
+
+@media (max-width: 1000px) {
+    .book_details {
+        margin: 0 5px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .book_details {
+        margin: 0 5px;
+        padding: 5px;
+    }
+}
+
+/* ===============================================================================
+                                 Table of all clients
+   =============================================================================== */
+
+.all_clients_list_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.all_clients_list{
+    width: 50%;
+}
+
+.all_clients_list th{
+    text-align: center;
+    padding: 10px;
+}
+
+.all_clients_list td{
+    padding: 10px;
+    width: auto;
+}
+
+@media (max-width: 1000px) {
+    .all_clients_list{
+        width: 80%;
+        margin: auto;
+    }
+    .all_clients_list th, .all_clients_list td{
+        padding:5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .all_clients_list{
+        width: 80%;
+        margin: auto;
+    }
+    .all_clients_list th, .all_clients_list td{
+        padding:3px;
+    }
+}
+
+/* ===============================================================================
+                      Client Details and Client Read Books tables
+   =============================================================================== */
+
+.all_client_details{
+    gap: 5px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.client_details, .read_list{
+    width: 80%;
+    margin: auto;
+}
+
+.read_list{
+    padding: 10px;
+}
+
+.read_list th{
+    text-wrap: nowrap;
+}
+
+.read_list td{
+    width: auto;
+}
+
+.client_details th{
+    text-align: right;
+    padding: 10px;
+    width: 20%;
+}
+
+.client_details td{
+    text-align: left;
+    padding: 10px;
+    max-width: 80%;
+}
+
+@media (max-width: 1000px) {
+    .client_details, .read_list {
+        width: 90%;
+        padding: 5px 5px;
+    }
+    .client_details th{
+        width: 25%;
+    }
+}
+
+@media (max-width: 600px) {
+    .client_details, .read_list {
+        width: 90%;
+        padding: 2px 5px;
+    }
+    .client_details th{
+        width: 25%;
+    }
+    .read_list th{
+        text-wrap: wrap;
+    }
+    .read_list td{
+        text-wrap: wrap;
+        padding: 2px;
+    }
+}
+
+/* ===============================================================================
+                                  Table of all authors
+   =============================================================================== */
+
+.all_author_list_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.all_author_list{
+    width: 70%;
+}
+
+.all_author_list th{
+    text-align: center;
+    text-wrap: nowrap;
+    padding: 10px;
+}
+
+.all_author_list td{
+    padding: 10px;
+    width: auto;
+}
+
+@media (max-width: 1000px) {
+    .all_author_list{
+        margin: 0 5px;
+        width: 80%;
+    }
+    .all_author_list th, .all_author_list td{
+        padding:4px 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .all_author_list{
+        margin: 0 5px;
+        width: 80%;
+    }
+    .all_author_list th, .all_author_list td{
+        padding:2px 5px;
+    }
+}
+
+/* ===============================================================================
+                               Table of available books
+   =============================================================================== */
+
+.available_books_list_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.available_books_list_div{
+    width:100%;
+    justify-content: center;
+    margin: auto;
+}
+
+.available_books_table{
+    text-wrap: nowrap;
+    width: 90%;
+    margin: auto;
+}
+
+.available_books_table th{
+    text-align: center;
+    padding: 10px;
+}
+
+.available_books_table td{
+    padding: 10px;
+    width: auto;
+}
+
+@media (max-width: 1000px) {
+    .available_books_table{
+        text-wrap: wrap;
+    }
+    .available_books_table th, .available_books_table td{
+        padding:5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .available_books_table{
+        text-wrap: wrap;
+    }
+    .available_books_table th, .available_books_table td{
+        padding:3px;
+    }
+}
+
+/* ===============================================================================
+                                 Table of loaned books
+   =============================================================================== */
+
+.loaned_books_list_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.loaned_books_list_div{
+    width:100%;
+    justify-content: center;
+    margin: auto;
+}
+
+.loaned_books_table{
+    text-wrap: nowrap;
+    width: 90%;
+    margin: auto;
+}
+
+.loaned_books_table th{
+    text-align: center;
+    padding: 10px;
+}
+
+.loaned_books_table td{
+    padding: 10px;
+}
+
+@media (max-width: 1000px) {
+    .loaned_books_table{
+        text-wrap: wrap;
+    }
+    .loaned_books_table th, .loaned_books_table td{
+        padding:5px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .loaned_books_table{
+        text-wrap: wrap;
+    }
+    .loaned_books_table th, .loaned_books_table td{
+        padding:2px 5px;
+        font-size: 12px;
+    }
+}
+
+/* ===============================================================================
+                                      Forms
+   =============================================================================== */
+.add_form_div_container{
+    background-color: #e4e4e4;
+    padding: 10px;
+}
+.add_form{
+    padding: 10px;
+    align-items: center;
+    display: block;
+    align-content: center;
+}
+.add_form_div_button{
+    display: flex;
+    justify-content: center;
+}
+.add_form_div_button button{
+    font-size: 16px;
+    line-height: 1.3;
+    padding: 10px 50px;
+    border-radius: 10px;
+    background-color: #ffa552;
+    border: none;
+    color: #954300;
+}
+.add_form_div_button button:hover {
+    background-color: #fd8f23;  /* Zmiana koloru tła po najechaniu */
+}
+.add_form_div_button button:active {
+    background-color: #cd7e3b;  /* Zmiana koloru po kliknięciu */
+}
+
+@media (max-width: 1000px) {
+    .add_form_div_button button{
+        padding: 8px 30px;
+    }
+}
+@media (max-width: 600px) {
+    .add_form_div_button button{
+        padding: 5px 20px;
+    }
+}
+
+/* ===================================================
+                    Add Book Form
+   =================================================== */
+.add_book_form_datafields{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.add_book_form_datafields_inputs{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+}
+.add_book_form_datafields_inputs input{
+    font-size: 16px;
+    width: 95%;
+    margin: 5px 10px;
+    line-height: 1.5;
+
+}
+.add_book_form_datafields_textarea{
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.add_book_form_datafields_textarea textarea{
+    max-width: 95%;
+    margin: 10px 10px;
+    resize: none;
+    font-size: 16px;
+    line-height: 1.4;
+    width: 100%;
+    border: none;
+}
+.add_book_form_datafields_data_select_div{
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    width: 100%;
+}
+.add_book_form_datafields_data_select_div label{
+    font-size: 16px;
+    font-family: "Times New Roman";
+    width: 95%;
+    margin-left: 10px;
+    margin-bottom: 0;
+    color: #8f8f8f;
+}
+.add_book_form_datafields_data_select{
+    font-size: 16px;
+    width: 95%;
+    margin: 0 10px;
+    line-height: 1.5;
+}
+.add_book_form_datafields_data_select option{
+    font-size: 16px;
+    width: 95%;
+    margin: 10px 10px;
+}
+
+@media (max-width: 1000px) {
+    .add_book_form_datafields{
+        flex-direction: column;
+    }
+}
+@media (max-width: 600px) {
+    .add_book_form_datafields{
+        flex-direction: column;
+    }
+}
+
+/* ===================================================
+                    Add Client Form
+   =================================================== */
+.add_client_form_datafields{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.add_client_form_datafields_input{
+    font-size: 16px;
+    width: 100%;
+    padding:10px;
+    line-height: 1.5;
+}
+.add_client_form_datafields_input input{
+    font-size: 16px;
+    width: 100%;
+    line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+    .add_client_form_datafields{
+        flex-direction: column;
+    }
+    .add_client_form_datafields_input{
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+    .add_client_form_datafields_input input{
+        font-size: 14px;
+    }
+}
+@media (max-width: 600px) {
+    .add_client_form_datafields{
+        flex-direction: column;
+    }
+    .add_client_form_datafields_input{
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+    .add_client_form_datafields_input input{
+        font-size: 12px;
+    }
+}
+
+/* ===================================================
+                   Add Author Form
+   =================================================== */
+.add_author_form_datafields{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.add_author_form_datafields input{
+    width: 50%;
+    font-size: 16px;
+}
+
+@media (max-width: 1000px) {
+    .add_author_form_datafields input{
+        width: 90%;
+        font-size: 15px;
+    }
+}
+@media (max-width: 600px) {
+    .add_author_form_datafields input{
+        width: 90%;
+        font-size: 12px;
+    }
+}
+
+/* ===================================================
+                  Loan/Return Book Form
+   =================================================== */
+.rental_form{
+    background-color: #e4e4e4;
+    padding: 10px;
+}
+.rental_book_form_datafields{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.rental_book_form_datafields_data{
+    margin: 0 10px;
+    width: 50%;
+}
+.rental_book_form_datafields_data label{
+    line-height: 2;
+    font-size: 18px;
+    color: #474747;
+}
+.rental_book_form_datafields_data_select{
+    font-size: 20px;
+    color: #555555;
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .rental_book_form_datafields{
+        flex-direction: column;
+        margin-right: 10px;
+    }
+    .rental_book_form_datafields_data{
+        width: 100%;
+    }
+    .rental_book_form_datafields_data label{
+        line-height: 1.5;
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+    .rental_book_form_datafields{
+        flex-direction: column;
+    }
+    .rental_book_form_datafields_data{
+        width: 100%;
+    }
+    .rental_book_form_datafields_data label{
+        line-height: 1.5;
+        font-size: 14px;
+    }
+}
+
+/* ===============================================================================
+                           General Screensize Adjustment
+   =============================================================================== */
+
+@media (max-width: 1000px) {
+
+    .add_book_form_datafields_inputs input, .add_book_form_datafields_textarea textarea,
+    .add_form_div_button button, .add_client_form_datafields input{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .add_book_form_datafields_inputs input, .add_book_form_datafields_textarea textarea,
+    .add_form_div_button button, .add_client_form_datafields input{
+        font-size: 12px;
+    }
+}
+
+/* ===============================================================================
+                                       Additional
+   =============================================================================== */
+
+.return_answer{
+    font-size: 20px;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .return_answer{
+        font-size: 17px;
+    }
+}
+@media (max-width: 600px) {
+    .return_answer{
+        font-size: 14px;
+    }
+}
+
+#button_thead{
+    background: none;
+    border: none;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    color: #a8a8a8;
+    cursor: pointer;
+    justify-content: right;
+}
+
+.icon-button:focus {
+    outline: none;
+}
+
+/* URLs */
+
+.add_button{
+    width: 80%;
+    text-align: right;
+}
+
+.add_button a{
+    color: inherit;
+    display: inline-block;
+}
+
+a{                                /* general URL behavior */
+    text-decoration: none;
+    color: #a55203;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #ef7600;
+}
+
+/* *********************************** tests  *************************************/
+
+*{
+    /*border: 1px solid red;*/
+}

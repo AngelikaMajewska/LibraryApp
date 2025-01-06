@@ -1,0 +1,78 @@
+{% macro input(label,name, placeholder = "", style="") %}
+{#    <label>{{ label }}</label><br>#}
+    <input name="{{name}}" type="{{type}}" maxlength="255" value="" placeholder="{{label}}" style="{{style}}"/><br>
+{% endmacro %}
+
+{% macro loan_return_book_form(books, clients, column, button) %}
+    <form method="post" action="#">
+        <div class="rental_book_form_datafields">
+            <div class="rental_book_form_datafields_data">
+                <label>Client</label><br>
+                <select name="chosen_client" id="chosen_client" class="rental_book_form_datafields_data_select">
+                    {% for client in clients %}
+                        <option value="{{ client[0] }}">{{ client[1] }} {{ client[2] }}</option>
+                    {% endfor %}
+                </select><br>
+            </div>
+            <div class="rental_book_form_datafields_data">
+                <label>Title</label><br>
+                <select name="chosen_book" id="chosen_book" class="rental_book_form_datafields_data_select">
+                    {% for book in books %}
+                        <option value="{{ book[0] }}">{{ book[column] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="add_form_div_button">
+            <button type="submit" name="submit" value="loan">{{ button }}</button>
+        </div>
+    </form>
+{% endmacro %}
+
+{% macro add_book_form(authors) %}
+    <form class="add_form" method="post" action="#" >
+        <div class="add_book_form_datafields">
+            <div class="add_book_form_datafields_inputs">
+                <div>{{ input("ISBN","isbn") }}</div>
+                <div>{{ input("Title","title") }}</div>
+{#                <div>{{ input("Author ID","author_id") }}</div>#}
+                <div class="add_book_form_datafields_data_select_div">
+                    <label>Author</label><br>
+                    <select name="chosen_author" id="chosen_author" class="add_book_form_datafields_data_select">
+                        {% for author in authors %}
+                            <option  value="{{author[0]}}">{{ author[0] }}: {{ author[1]}}</option>
+                        {% endfor %}
+                    </select><br>
+                </div>
+            </div>
+            <div class="add_book_form_datafields_textarea">
+                <textarea name="desc" maxlength="255" rows="5" cols = "82"  value="" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="add_form_div_button"><button type="submit" name="submit" value="book">Submit</button></div>
+    </form>
+{%  endmacro %}
+
+{% macro add_author_form() %}
+    <form class="add_form" method="post" action="/add_author">
+        <div class="add_author_form_datafields">
+            {{ input("Full name","full_name","Full name of a new author") }}
+        </div>
+        <div class="add_form_div_button">
+             <button type="submit" name="submit" value="client">Submit</button>
+        </div>
+    </form>
+{% endmacro %}
+
+{% macro add_client_form() %}
+    <form class="add_form" method="post" action="#">
+        <div class="add_client_form_datafields">
+            <div class="add_client_form_datafields_input">{{ input("First name", "first", "First name of a new client") }}</div>
+            <div class="add_client_form_datafields_input">{{ input("Last name", "last", "Last name of a new client")}}</div>
+        </div>
+        <div class="add_form_div_button">
+            <button type="submit" name="submit" value="client">Submit</button>
+        </div>
+    </form>
+{%  endmacro %}

@@ -1,0 +1,30 @@
+{% extends "elements/base.html" %}
+{% import 'elements/tables.html' as tables %}
+{% block title %} Client details {% endblock %}
+
+{% block content %}
+{#        <p class="return_button" ><a href="{{ url_for('clients') }}">&#x300A;</a></p>#}
+        <h1 class="h1_header">Client details</h1>
+        <div class="main_content">
+            <div class="all_client_details">
+                    {% if client is not none %}
+                        <div>
+                            {{ tables.client_details_list(client) }}
+                        </div>
+                        {% if books is not none %}
+                            <div>
+                                {{ tables.client_read_books_list(books) }}
+                            </div>
+                        {% else %}
+                            <div class="main_content">
+                                <p class="return_answer">Books for this Client ID not found</p>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <div class="main_content">
+                            <p class="return_answer">Client ID was not found</p>
+                        </div>
+                    {% endif %}
+            </div>
+        </div>
+{% endblock %}

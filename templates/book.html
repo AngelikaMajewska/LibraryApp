@@ -1,0 +1,27 @@
+{% extends "elements/base.html" %}
+{% import 'elements/tables.html' as tables %}
+{% import 'elements/forms.html' as forms %}
+{% block title %}Book list{% endblock %}
+
+{% block content %}
+    {% if data is not none %}
+        <div >
+            <div class="add_form_div_container">
+                <h2 class="h2_header">Add a book</h2>
+                <div class="add_book_form_container">
+                    {{ forms.add_book_form(authors) }}
+                </div>
+            </div>
+            <h1 class="h1_header">List of books</h1>
+            <div class="all_books_list_container" style="margin-top: 20px;">
+                <div>
+                    {{ tables.all_books_list(books) }}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="main_content">
+            <p class="return_answer">{{answer}}</p>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "elements/base.html" %}
+{% import 'elements/tables.html' as tables %}
+{% block title %} Client details {% endblock %}
+
+{% block content %}
+    <div class="all_client_details">
+    <h1 class="h1_header" style="margin-top: 10px;">Author details</h1>
+    {%  if answer is none %}
+            {% if books is not none %}
+                {{ tables.books_by_author_list(books) }}
+            {% else %}
+                <div>
+                    <p class="return_answer">{{answer}}</p>
+                </div>
+            {% endif %}
+    {%  else %}
+        <div class="main_content">
+            <p class="return_answer">{{answer}}</p>
+        </div>
+    {%  endif %}
+    </div>
+{% endblock %}

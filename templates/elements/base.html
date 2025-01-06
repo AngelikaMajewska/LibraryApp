@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../static/main_style.css">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('homepage') }}">Home</a></li>
+            <li><a href="{{ url_for('books') }}">Books</a></li>
+            <li><a href="{{ url_for('clients') }}">Clients</a></li>
+            <li><a href="{{ url_for('author') }}">Authors</a></li>
+            <li><a href="{{ url_for('loan') }}">Loan a book</a></li>
+            <li><a href="{{ url_for('return_book') }}">Return a book</a></li>
+        </ul>
+    </nav>
+    <div class="subpage_details">
+     {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
